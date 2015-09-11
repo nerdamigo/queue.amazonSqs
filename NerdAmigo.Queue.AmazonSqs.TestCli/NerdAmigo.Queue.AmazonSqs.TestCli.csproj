@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D3D403B9-0C7E-4E74-BC6A-60979CA25267}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NerdAmigo.Queue.AmazonSqs.TestCli</RootNamespace>
+    <AssemblyName>NerdAmigo.Queue.AmazonSqs.TestCli</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="SimpleInjector">
+      <HintPath>..\packages\SimpleInjector.3.0.4\lib\net45\SimpleInjector.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SampleMessage.cs" />
+    <Compile Include="SampleWorker.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\abstractions\NerdAmigo.Abstractions.csproj">
+      <Project>{2bff206d-8d34-47c2-92c5-6d002cb2b424}</Project>
+      <Name>NerdAmigo.Abstractions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\common\cli\NerdAmigo.Common.Cli.csproj">
+      <Project>{ad697402-c37c-4056-aa8c-f65ff88199de}</Project>
+      <Name>NerdAmigo.Common.Cli</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\common\configuration\NerdAmigo.Common.Configuration.csproj">
+      <Project>{a2d28ae5-e225-4075-9f63-323428e0a09b}</Project>
+      <Name>NerdAmigo.Common.Configuration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\common\simple-injector\NerdAmigo.Common.SimpleInjector.csproj">
+      <Project>{3f23c4f7-c798-4325-8106-eccbe8c71391}</Project>
+      <Name>NerdAmigo.Common.SimpleInjector</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\common\NerdAmigo.Queue.Common.csproj">
+      <Project>{9b06dafe-fd2c-46c8-92b7-a4cec6ba946f}</Project>
+      <Name>NerdAmigo.Queue.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NerdAmigo.Queue.AmazonSqs\NerdAmigo.Queue.AmazonSqs.csproj">
+      <Project>{4afecd7b-1d56-4af4-aabe-c3489d73bec9}</Project>
+      <Name>NerdAmigo.Queue.AmazonSqs</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
