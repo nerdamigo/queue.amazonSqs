@@ -30,12 +30,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AWSSDK, Version=2.3.52.0, Culture=neutral, PublicKeyToken=9f476d3089b52be3, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\ticket-solutions_v1\packages\AWSSDK.2.3.52.0\lib\net45\AWSSDK.dll</HintPath>
+    <Reference Include="AWSSDK, Version=2.3.55.0, Culture=neutral, PublicKeyToken=9f476d3089b52be3, processorArchitecture=MSIL">
+      <HintPath>..\..\..\ticket-solutions-backoffice\packages\AWSSDK.2.3.55.0\lib\net45\AWSSDK.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Microsoft.Web.XmlTransform, Version=2.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\ticket-solutions-backoffice\packages\Microsoft.Web.Xdt.2.1.1\lib\net40\Microsoft.Web.XmlTransform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\..\ticket-solutions-backoffice\packages\Newtonsoft.Json.8.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -50,13 +55,17 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\abstractions\NerdAmigo.Abstractions.csproj">
+    <ProjectReference Include="..\..\..\abstractions\NerdAmigo.Abstractions\NerdAmigo.Abstractions.csproj">
       <Project>{2bff206d-8d34-47c2-92c5-6d002cb2b424}</Project>
       <Name>NerdAmigo.Abstractions</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\common\aws\NerdAmigo.Common.Aws.csproj">
       <Project>{538db9db-57ae-4cd8-b56f-dab53d2c8969}</Project>
       <Name>NerdAmigo.Common.Aws</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\common\configuration\NerdAmigo.Common.Configuration.csproj">
+      <Project>{a2d28ae5-e225-4075-9f63-323428e0a09b}</Project>
+      <Name>NerdAmigo.Common.Configuration</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\common\NerdAmigo.Queue.Common.csproj">
       <Project>{9b06dafe-fd2c-46c8-92b7-a4cec6ba946f}</Project>
